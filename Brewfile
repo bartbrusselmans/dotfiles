@@ -48,7 +48,7 @@ brew 'tree' # List directories in a tree structure
 # brew 'node'
 # brew 'redis'
 # brew 'yarn'
-brew 'nvm'
+# brew 'nvm' # Brew install is not supported by NVM
 
 # Apps
 # cask '1password'
@@ -59,7 +59,7 @@ cask 'alfred'
 # cask 'dbngin'
 # cask 'discord'
 # cask 'docker'
-cask 'dropbox'
+# cask 'dropbox'
 # cask 'figma'
 cask 'firefox'
 # cask 'github'
@@ -68,6 +68,7 @@ cask 'google-chrome'
 # cask 'gpg-suite'
 # cask 'imageoptim'
 # cask 'insomnia'
+cask "iterm2"
 # cask 'phpmon'
 # cask 'phpstorm'
 # cask 'ray'
@@ -82,7 +83,7 @@ cask 'spotify'
 # cask 'telegram-desktop'
 # cask 'the-unarchiver'
 # cask 'tinkerwell'
-cask 'transmission'
+# cask 'transmission'
 # cask 'transmit'
 # cask 'tunnelbear'
 # cask 'tuple'
@@ -107,14 +108,13 @@ cask 'font-fira-code'
 # cask 'font-source-sans-pro'
 # cask 'font-source-serif-pro'
 
-# Mac App Store
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
-mas 'Amphetamine', id: 937984704
+# Mac App Store TODO put mas install in a separate file
+# mas install 409183694
+# mas install 409203825
+# mas install 409201541
+# mas install 937984704
 # mas 'Byword', id: 420212497
 # mas 'Giphy Capture', id: 668208984
 # mas 'Spark', id: 1176895641
 # mas 'Speedtest', id: 1153157709
 # mas 'Things', id: 904280696
-# mas 'Tweetbot', id: 1384080005
