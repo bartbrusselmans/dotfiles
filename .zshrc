@@ -11,7 +11,7 @@ export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR=$HOME/.nvm
 
 # Enable completions
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 # Minimal - Theme Settings
 # export MNML_INSERT_CHAR="$"
