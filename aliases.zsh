@@ -41,6 +41,20 @@ alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias gc="git commit"
 alias amend="git commit --amend --no-edit"
 alias log="git log --oneline --graph --decorate --abbrev-commit"
+alias gr="gr"
 alias rebase="git pull --rebase"
-alias rebase_continue="git rebase --continue"
-alias rebase_abort="git rebase --abort"
+alias continue="git rebase --continue"
+alias abort="git rebase --abort"
+alias list-count="git rev-list --left-right --count"
+alias list-diff="git rev-list --left-right --pretty=oneline"
+alias force="git push --force-with-lease"
+
+function gr {
+    if [ -n "$1" ]
+    then
+        git rebase -i HEAD~"$1"
+    else
+        autoload colors; colors
+        echo $fg[red]Error: Please pass how many commits to go back in your rebase as an argument.$reset_color
+    fi
+}
