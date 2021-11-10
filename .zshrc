@@ -91,12 +91,13 @@ source $ZSH/oh-my-zsh.sh
 
 
 # autoload correct node version mentioned in nvmrc
-autoload -U add-zsh-hook
+autoload -U add-zsh-hook colors
 load-nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
 
   if [ -n "$nvmrc_path" ]; then
+    echo $fg[green]"Found .nvmrc file. Loading correct version..." $reset_color
     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
     if [ "$nvmrc_node_version" = "N/A" ]; then
@@ -105,7 +106,7 @@ load-nvmrc() {
       nvm use
     fi
   elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
+    echo $fg[yellow]"Reverting to nvm default version" $reset_color
     nvm use default
   fi
 }
