@@ -48,6 +48,7 @@ alias abort="git rebase --abort"
 alias list-count="git rev-list --left-right --count"
 alias list-diff="git rev-list --left-right --pretty=oneline"
 alias force="git push --force-with-lease"
+alias checkout="git checkout"
 
 function gr {
     if [ -n "$1" ]
@@ -58,3 +59,6 @@ function gr {
         echo $fg[red]Error: Please pass how many commits to go back in your rebase as an argument.$reset_color
     fi
 }
+
+# FFMPEG
+alias list-devices='ffmpeg -f avfoundation -list_devices true -i ""'
