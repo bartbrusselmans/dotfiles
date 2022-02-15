@@ -97,12 +97,14 @@ load-nvmrc() {
   local nvmrc_path="$(nvm_find_nvmrc)"
 
   if [ -n "$nvmrc_path" ]; then
-    echo $fg[green]"Found .nvmrc file. Loading correct version..." $reset_color
     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
     if [ "$nvmrc_node_version" = "N/A" ]; then
+      echo $fg[green]"Found .nvmrc file. Node version not yet installed." $reset_color
+      echo $fg[yellow]"Installing Node version." $reset_color
       nvm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      echo $fg[green]"Found .nvmrc file. Loading Node version "$nvmrc_node_version"." $reset_color
       nvm use
     fi
   elif [ "$node_version" != "$(nvm version default)" ]; then
