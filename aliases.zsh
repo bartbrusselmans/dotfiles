@@ -6,6 +6,8 @@ alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-dire
 # alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias c="clear"
+alias bton="blueutil -p 1"
+alias btoff="blueutil -p 0"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
@@ -22,7 +24,7 @@ alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 # alias docker-composer="docker-compose"
 
 # Git
-# alias gst="git status"
+alias status="git status"
 # alias gb="git branch"
 # alias gc="git checkout"
 # alias gl="git log --oneline --decorate --color"
@@ -32,8 +34,8 @@ alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 # alias force="git push --force"
 # alias nuke="git clean -df && git reset --hard"
 # alias pop="git stash pop"
-# alias pull="git pull"
-# alias push="git push"
+alias pull="git pull"
+alias push="git push"
 # alias resolve="git add . && git commit --no-edit"
 # alias stash="git stash -u"
 # alias unstage="git restore --staged ."
@@ -62,3 +64,35 @@ function gr {
 
 # FFMPEG
 alias list-devices='ffmpeg -f avfoundation -list_devices true -i ""'
+# alias record-screen="record-screen"
+# alias mov-to-mp4=""
+
+# function mov-to-mp4 {
+#     if [ -n "$1" ]
+#     then
+#         if [ -n "$2" ]
+#         then
+#             ffmpeg -i "$1".mov -vcodec h264 -acodec aac "$2".mp4
+#         else
+#             autoload colors; colors
+#             echo $fg[red]Error: Please pass the name for the output file.$reset_color
+#         fi
+#     else
+#         autoload colors; colors
+#         echo $fg[red]Error: Please pass the name off the input file.$reset_color
+#     fi
+# }
+
+# function record-screen {
+#     if [ ! -n "$1" ]
+#             autoload colors; colors
+#             echo $fg[red]Error: No input screen parameter passed. $reset_color
+#     else
+#         if [ ! -n "$2" ]
+#             autoload colors; colors
+#             echo $fg[red]Error: No output name parameter passed. $reset_color
+#         else
+#             ffmpeg -f avfoundation -r 30 -s 1280x720 -i "$1:0"  $HOME/Desktop/$2.mp4
+#         fi
+#     fi
+# }
